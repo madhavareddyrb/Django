@@ -4,37 +4,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>templates</title>
+  <title>Employee Details</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
-  <h1 class="container pd-5 pt-5">Employee List</h1>
+<div class="container" >
 
-  <div class="container">
-    <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Name</th>
-      <th scope="col">Designation</th>
-      <th scope="col">Phone Number</th>
-    </tr>
-  </thead>
-  <tbody>
+  <div class="card mx-auto" style="width: 18rem; ">
+  <img src="{{ employee.photo.url }} " class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">All Detailes of {{employee.name}} </h5>
+    <p class="card-text">{{employee.name}} </p>
+    <p class="card-text">{{employee.designation}} </p>
+    <p class="card-text">{{employee.email_address}} </p>
+    <p class="card-text">{{employee.phone_number}} </p>
 
-    {% for emp in employees %}
-    <tr>
-      <th>{{ forloop.counter }} </th>
-      <td>  <a href="{% url 'employee_details' emp.id%}">{{emp.name}} </a></td>
-      <td>{{ emp.designation }} </td>
-      <td>{{ emp.phone_number }} </td>
-    </tr>
-    {% endfor %}
-  </tbody>
-</table>
 
+    <a href="{% url 'home' %}" class="btn btn-primary">Back TO Home</a>
   </div>
+</div>
+</div>
+
 </body>
 </html>
