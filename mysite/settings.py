@@ -121,3 +121,8 @@ STATICFILES_DIRS = [
   BASE_DIR / 'mysite/static'
 ]
 
+
+# Media files configration
+
+MEDIA_URL = 'media/'
+MEDIA_ROOT = BASE_DIR / 'media'
